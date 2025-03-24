@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show do Milhão</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="home-screen" class="game-screen">
+            <h1>🎉 Show do Milhão 🎉</h1>
+            <div class="trophy">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <p>Teste seus conhecimentos e ganhe o prêmio máximo!</p>
+            <button id="start-btn" class="btn">Começar Jogo</button>
+        </div>
+
+        <div id="game-screen" class="game-screen hidden">
+            <div class="header">
+                <div class="score">
+                    <span>Pontuação: R$</span>
+                    <span id="current-score">0</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                </div>
+                <div class="question-counter">
+                    <span id="current-question">1</span>/<span id="total-questions">10</span>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text">Carregando pergunta...</h2>
+                <div class="options-container">
+                    <button class="option-btn" id="option-a" data-option="A">A) </button>
+                    <button class="option-btn" id="option-b" data-option="B">B) </button>
+                    <button class="option-btn" id="option-c" data-option="C">C) </button>
+                    <button class="option-btn" id="option-d" data-option="D">D) </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedback-screen" class="game-screen hidden">
+            <div id="correct-feedback" class="feedback hidden">
+                <h2>✅ Resposta correta!</h2>
+                <p>Parabéns! Você ganhou R$<span id="current-win"></span></p>
+            </div>
+            <div id="incorrect-feedback" class="feedback hidden">
+                <h2>❌ Resposta incorreta!</h2>
+                <p>A resposta correta era <span id="correct-answer"></span>.</p>
+            </div>
+            <button id="next-btn" class="btn">Próxima Pergunta</button>
+        </div>
+
+        <div id="result-screen" class="game-screen hidden">
+            <h1 id="result-title">🏆 Fim de Jogo!</h1>
+            <div id="trophy-container" class="hidden">
+                <div class="trophy-big">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2>CAMPEÃO!</h2>
+            </div>
+            <p>Você acertou <span id="correct-count">0</span> de <span id="total-count">10</span> perguntas.</p>
+            <p>Seu prêmio: R$<span id="final-score">0</span></p>
+            <p id="result-message"></p>
+            <button id="restart-btn" class="btn">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
